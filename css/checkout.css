@@ -1,0 +1,329 @@
+.loading .cc-button {
+    background-image: url("https://members.ocdla.org/sites/default/files/icons/loading.gif");
+    background-position: 5px center;
+    background-repeat: no-repeat;
+}
+
+.message-success {
+	background-color:green;
+	color:#fff;
+	padding:5px;
+}
+
+.message-warning {
+	background-color:yellow;
+	color:#666;
+	padding:5px;
+}
+
+.message-error {
+	background-color:red;
+	color:#fff;
+	padding:5px;
+}
+
+
+#checkout-summary {
+	display:table;
+	width:100%;
+}
+
+#orderItems {
+	height:auto;
+	border:1px solid #ccc;
+	overflow-y:scroll;
+}
+
+input {
+	max-width: 100%;
+}
+
+#cc-payment .button {
+	margin-top:4px;
+	margin-bottom:4px;
+	border-radius:10px;
+}
+
+#ccSubmit {
+	visibility:hidden;
+	background-color:green;
+}
+
+#cc-payment .next-step:hover {
+	background-color:#445171;
+}
+
+#cc-payment .previous-step {
+	display:none;
+}
+
+form div[class*="row"] {
+	margin-top:15px;
+}
+
+form label[class*="help"] {
+	font-size:smaller;
+	font-style:italic;
+}
+
+input[class*="button"] {
+	margin-top:15px;
+	width:200px;
+	height:75px;
+	font-weight:bold;
+	padding:15px;
+	font-size:14pt;
+}
+
+
+.cc-data-hidden {
+	display:none;
+}
+
+.cc-data {
+	margin-top:10px;
+}
+
+.cc-data input {
+	padding:3px;
+}
+
+.cc-data label {
+	display:block;
+}
+
+
+div[id*="orderSummary"] td {
+	padding:3px;
+}
+
+div[id*="orderSummary"] tr:nth-child(even) td {
+	background-color:#eee;
+}
+
+
+
+
+
+/**
+	* Mobile & Desktop
+	*/
+
+.two-columns .column-first {
+	display:block;
+} 
+
+
+.form-complete #ccSubmit {
+	visibility:visible;
+}
+
+
+
+
+.without-billing .checkout-billing-panel,
+.without-shipping .checkout-shipping-panel {
+	visibility:visible;
+}
+
+.form-complete .checkout-shipping-panel {
+	visibility:visible;
+	z-index:0;
+}
+
+.checkout-action {
+	width:25px;
+	height:25px;
+	display:inline-block;
+}
+
+.checkout-action .remove-opportunity-line-item {
+	display:inline-block;
+	background-image: url("//members.ocdla.org/sites/all/modules/cart/images/remove-from-cart-icon.png");
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size:90%;
+	width:100%;
+	height:100%;
+}
+
+
+
+
+
+/**
+ * all layouts
+ * hide the relevant checkout panels
+ * and show them as needed
+ */
+.checkout-contact-panel .content {
+	padding-bottom:10px;
+	padding-top:10px;
+}
+
+.checkout-panel {
+	overflow:hidden;
+	max-height: 1000px;
+	transition: max-height 1.0s ease-in;
+}
+
+.panel-closed {
+	max-height:0px;
+	transition: max-height 1.0s ease-in;
+}
+
+
+.checkout-panel .content,
+.checkout-contact-panel .content {
+	padding:5%;
+}
+
+.checkout-billing-panel .content {
+	padding-top:15px;
+}
+
+
+
+
+/**
+	* Desktop only 
+	*/
+@media only screen and (min-width: 800px) {
+
+	#orderItems {
+		max-height:800px;
+	}	
+	
+	.two-column {
+		position:relative;
+	}
+	
+	.column {
+		display: inline-block;
+		width:45%;
+	}
+	
+	/* .with-billing */
+	#checkout-app .column-first {
+		position:relative;
+		background-color:transparent;
+	}
+	
+	.column-first .content {
+		background-color:rgba(255,255,255,1.0);
+	}
+	
+	#billing-and-shipping {
+		background-color:#fff;
+	}
+
+
+	.
+	/**
+	 * setup table display for order summary
+	 */
+	#checkout-summary {
+		display:table;
+		width:100%;
+	}
+	 
+	.table-headings {
+		font-weight:bold;
+		display:table-row;
+		font-family:Arial, sans-serif;
+	}
+	 
+	 .table-row-group {
+	 	display:table-row-group;
+	 }
+	 
+	 .table-row {
+			display:table-row;
+			margin:0px;
+			padding:0px;
+	 }
+	 
+	 .table-cell, .table-header {
+	 		display:table-cell;
+	 		padding:0px;
+	 		vertical-align:middle;
+			padding-top:6px;
+			padding-bottom:6px;
+	 }
+	 
+
+
+	
+	.without-shipping .checkout-shipping-panel {
+		display:none;
+	}
+	
+
+	
+	.without-billing .checkout-billing-panel,
+	.without-shipping .checkout-shipping-panel {
+		transition-property: left;
+		transition-duration: 0.5s;
+		transition-delay: 0s;
+		transition-timing-function: ease-out;
+		left:-250px;
+	}
+	
+
+	
+	.checkout-success .checkout-billing-panel,
+	.checkout-success .checkout-shipping-panel {
+		display:none;
+	}
+	
+	.button {
+		/* height:40px; @jbernal */
+		height:auto;
+		transition-property: height, padding;
+		transition-duration: 0.5s;
+		transition-delay: 0s;
+		transition-timing-function: ease-out;
+	}
+	
+	.checkout-success .button {
+		height:0px;
+		padding:0px;
+		overflow:hidden;
+	}
+
+	
+	.form-complete .checkout-billing-panel:hover,
+	.form-complete .checkout-shipping-panel:hover {
+		opacity:0.8;
+		cursor:pointer;
+	}
+	
+	.form-complete .next-step {
+		opacity:0.6;
+	}
+	
+	.form-complete .next-step:hover {
+		opacity:1.0;
+	}
+	
+}
+
+
+
+
+
+@media only screen and (max-width: 800px){
+	.checkout-panel,
+	.checkout-panel {
+		display:inline-block;
+		vertical-align:top;
+		width:45%;
+	}
+	
+
+	.column-first, .column-second, .main,
+	.two-columns .main {
+		display:block;
+		width:auto;
+	}
+}
